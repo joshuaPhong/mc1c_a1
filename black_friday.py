@@ -17,10 +17,8 @@ class BlackFriday:
         The constructor for BlackFriday class.
         Initializes the Black Friday instance when called.
         Has a default, private variable; _black_friday_discount: float
-
         """
 
-        # a class only / private variable to define the discount's value
         self._black_friday_discount = 50.0
 
     def apply_discount(self, cart_items, cart_total):
@@ -32,14 +30,17 @@ class BlackFriday:
         :param cart_total: The total value of the customer's cart items.
         :type cart_total: float
 
-        :return: cart_total - discount; If discount is applied, otherwise
+        :return: Cart_total - discount; If discount is applied, otherwise
         cart_total
         :rtype: float
 
         Example:
 
         """
-        if cart_items >= 5 and cart_total >= 200.0:
-            return cart_total - self._black_friday_discount
-        else:
-            return cart_total
+        try:
+            if cart_items >= 5 and cart_total >= 200.0:
+                return cart_total - self._black_friday_discount
+            else:
+                return cart_total
+        except Exception as err:
+            return f"You have an error: {err}"
