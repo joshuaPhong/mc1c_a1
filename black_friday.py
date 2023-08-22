@@ -1,9 +1,19 @@
+# sources
+# https://realpython.com/documenting-python-code/
+# https://stackoverflow.com/questions/41052221/what-is-the-difference-between-var-cvar-and-ivar-in-pythons-sphinx
+# https://www.jetbrains.com/help/pycharm/documenting-source-code.html
+# https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#info-field-lists
+# https://chat.openai.com/ ? i want to change the exception type as I am going
+# to remove debug mode:
+# ValueError Exception: The exception type is changed to ValueError,
+# which is more appropriate for handling conversion issues.
+
+
 class BlackFriday:
     """
     A class for XClouds black friday sale.
-    :ivar _black_friday_discount: The discount applied if the conditions are
-    met.
-        A private variable, for Black Friday use only.
+    :cvar _black_friday_discount: The discount applied if the conditions are
+    met. A private variable, for Black Friday use only.
     :type _black_friday_discount: float
 
     Methods:
@@ -12,54 +22,44 @@ class BlackFriday:
     Example:
         Apply a discount:
             discount = apply_discount(cart_items: int, cart_total: float)
-            discount = apply_discount(5, 200.0)
-        If importing module:
-        Create an instance first.
-            discount_instance = BlackFriday()
-        Use the function:
-            discount_instance.apply_discount(5, 200.0)
 
+        Import module: import black_friday
+        Create an instance: discount_instance = black_friday.BlackFriday()
+        Use the function: discount_instance.apply_discount(5, 200.0)
     """
+    _black_friday_discount = 50.0
 
     def __init__(self):
         """
-        Initialize the Black Friday instance when called:
-        With the default private variable; _black_friday_discount: float
+        Initialize the Black Friday instance when called.
         """
 
-        self._black_friday_discount = 50.0
-        self.debug = True
-
-    def apply_discount(self, cart_items, cart_total):
+    def apply_discount(self, cart_items: int, cart_total: float):
         """
         Apply the black friday discount if:
         cart_items >= 5 AND cart_total >= 200.
         :param cart_items: The total number of items in a customer's cart.
-        This should be an integer but is of type float for error handling
-        :type cart_items: float
+        :type cart_items: int
         :param cart_total: The total value of the customer's cart items.
         :type cart_total: float
 
         :return: Cart_total - discount; If discount is applied, otherwise
         cart_total
         :rtype: float
+        :raises ValueError: for inputting incorrect types
 
         Example:
         Apply a discount:
             discount = apply_discount(cart_items: int, cart_total: float)
             discount = apply_discount(5, 200.0)
-
         """
         try:
-            # Parameters are cast to handle strings and prevent any rounding
-            # of cart_items. Error handling.
-            if float(cart_items) >= 5 and float(cart_total) >= 200.0:
+            # Parameters are cast to handle strings. Error handling.
+
+            if int(cart_items) >= 5 and float(cart_total) >= 200.0:
                 return float(cart_total) - self._black_friday_discount
             else:
                 return cart_total
-        except Exception as err:
-            if self.debug is True:
-                return f"You have an error: {err}"
-            else:
-                return "Whoops, there has been an error. Try again"
-                # then send the user back
+        except ValueError:
+            return (f"You have entered an incorrect value, please enter cart "
+                    f"items: int, cart total: float")
