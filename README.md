@@ -45,5 +45,5 @@ Instantiating an object of class BlackFriday and using it while passing a variet
 These tests can be found in main.py and the output / results can be seen in the console by running main.py
 
 # Sources
-For a complete list of sources see main.py
+See black_friday.py and test_black_friday.py for sources used relevant to each file.
 
