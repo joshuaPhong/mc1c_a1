@@ -28,6 +28,21 @@ object_name = BlackFriday()
 ## Use the object / access the method
 object_name.method_name(arg1,arg2). See main.py for examples.
 # Tests
+I tested in two ways.
+I constructed unittests and I instantiated objects and passed arguments to the method to record the console output.
+## Unit tests
+Testing the function with varying inputs / test data
+All unit tests are in test_black_friday.py
+Using pycharm I first constructed a stub when creating the test_ file.
+This imports the unit test module, creates a TestClass, and a test method. These were appropriately renamed. 
+I imported the black_friday.py file to be tested.
+I then began constructing individual unit tests. I used individual unit tests because they are clearer, more readable, and they all use different test data.
+First a docstring, a short description of what was being tested.
+Then I followed a given, when, then model. Given a set of test data (create the data), when we call the function (call the function with the test data), then impliment the test (an assertEqual in all cases). Result, Pass or Fail.
+I tested for; minimum conditions, exceed conditions, below conditions, one condition True and the other False, edges, zeros, large numbers, negative numbers, and strings.
+## Whitebox tests
+Instantiating an object of class BlackFriday and using it while passing a variety of arguments to it. Compared the output to expected results.
+These tests can be found in main.py and the output / results can be seen in the console by running main.py
 
 # Sources
 [Link] (https://www.geeksforgeeks.org/python-oops-concepts/)
