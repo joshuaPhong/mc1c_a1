@@ -45,5 +45,5 @@ Instantiating an object of class BlackFriday and using it while passing a variet
 These tests can be found in main.py and the output / results can be seen in the console by running main.py
 
 # Sources
-[Link] (https://www.geeksforgeeks.org/python-oops-concepts/)
+For a complete list of sources see main.py
 
