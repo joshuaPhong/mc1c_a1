@@ -1,14 +1,3 @@
-# sources
-# https://realpython.com/documenting-python-code/
-# https://stackoverflow.com/questions/41052221/what-is-the-difference-between-var-cvar-and-ivar-in-pythons-sphinx
-# https://www.jetbrains.com/help/pycharm/documenting-source-code.html
-# https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#info-field-lists
-# https://chat.openai.com/ ? i want to change the exception type as I am going
-# to remove debug mode:
-# ValueError Exception: The exception type is changed to ValueError,
-# which is more appropriate for handling conversion issues.
-
-
 class BlackFriday:
     """
     A class for XClouds black friday sale.
@@ -34,12 +23,12 @@ class BlackFriday:
         Initialize the Black Friday instance when called.
         """
 
-    def apply_discount(self, cart_items: int, cart_total: float):
+    def apply_discount(self, cart_items: int | float, cart_total: float):
         """
         Apply the black friday discount if:
         cart_items >= 5 AND cart_total >= 200.
         :param cart_items: The total number of items in a customer's cart.
-        :type cart_items: int
+        :type cart_items: int | float
         :param cart_total: The total value of the customer's cart items.
         :type cart_total: float
 
@@ -55,8 +44,7 @@ class BlackFriday:
         """
         try:
             # Parameters are cast to handle strings. Error handling.
-
-            if int(cart_items) >= 5 and float(cart_total) >= 200.0:
+            if float(cart_items) >= 5 and float(cart_total) >= 200.0:
                 return float(cart_total) - self._black_friday_discount
             else:
                 return cart_total
