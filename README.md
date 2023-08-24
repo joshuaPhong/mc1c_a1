@@ -15,8 +15,8 @@ In this assignment I was able to impliment the following OOP priciples.
 * Classes. I created a class BlackFriday. It contains a private variable and a discount method.
 * Objects. I have used objects in the main.py and test_black_friday.py. Primarily for testing purposes. Instantiating Objects for both Unit tests and White Box tests.
 These objects, have states (the values passed), behaviour (the method used) and, an identity (the objects name).  
-* Encapsulation. All methods and attributes relating to the black friday sale are wrapped in the black friday class.
-I have used a private class variable for the discount value. The methods in the class can use it but it cannot be accessed from outside the class.
+* Encapsulation. All class methods and variables relating to the black friday sale are wrapped in the black friday class.
+I have used a private class variable for the discount value. The methods in the class can use it but it cannot be accessed from outside the class i.e. by its objects.
 # How to
 ## Create an object
 import the the module. 
