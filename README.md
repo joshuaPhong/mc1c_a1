@@ -1,7 +1,7 @@
 # MC1C-A1: Assignment one for python micro-credential
 # Project Description
 This project is for the Python Micro-Credential by WhiteCliffe.
-This readme is as much for the marker as it is for any dev who uses the code.
+This readme is for the marker as it is for any dev who uses the code. The code is a python function that applies a discount when cart_items >= 5 and cart_total >= 200.00.
 ## Assignment Brief
 Use OOP Python to meet the client's brief. 
 * Provide the required functionality.
