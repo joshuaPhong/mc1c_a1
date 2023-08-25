@@ -256,11 +256,11 @@ class TestBlackFriday(unittest.TestCase):
                          f"Test failed; expected {expected_total}, "
                          f"got {apply_discount_total}")
 
-    def test_apply_discount_strings(self):
+    def test_apply_discount_strings_float(self):
         """
         Test method apply_discount(), from class BlackFriday.
         Test strings.
-        Test discount is applied when parameters are input as strings.
+        Test discount is applied when parameters are input as float string.
 
         :return: None
         :raises AssertionError: != if the expected result does not equal
@@ -268,6 +268,29 @@ class TestBlackFriday(unittest.TestCase):
         """
         # given test data
         cart_items = "5.0"
+        cart_total = "200"
+        expected_total = 150
+        # when we call the apply_discount function with the test data
+        apply_discount_total = self.test_instance.apply_discount(cart_items,
+                                                                 cart_total)
+        # then implement test
+        self.assertEqual(apply_discount_total, expected_total,
+                         f"Test failed; expected {expected_total}, "
+                         f"got {apply_discount_total}")
+
+
+    def test_apply_discount_strings_int(self):
+        """
+        Test method apply_discount(), from class BlackFriday.
+        Test strings.
+        Test discount is applied when parameters are input as an int string.
+
+        :return: None
+        :raises AssertionError: != if the expected result does not equal
+        applied test inputs.
+        """
+        # given test data
+        cart_items = "5"
         cart_total = "200"
         expected_total = 150
         # when we call the apply_discount function with the test data
