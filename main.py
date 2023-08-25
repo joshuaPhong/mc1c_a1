@@ -20,8 +20,7 @@ if __name__ == '__main__':
     # create an instance
     discount_instance = black_friday.BlackFriday()
     # access the function
-    print(discount_instance.apply_discount("4.9", 23.0))
-    print(discount_instance.apply_discount(1, -203.0))
-    print(discount_instance.apply_discount(4.9, 200.0))
-    print(discount_instance.apply_discount(5,
-                                           200000000000000000000000000000000000000000000000000.01))
+    print(discount_instance.apply_discount(9 ** 10, 9 ** 100))
+    print(((9 ** 100) - 50.0))
+    print((9 ** 100))
+    print(((9 ** 100) - 50))

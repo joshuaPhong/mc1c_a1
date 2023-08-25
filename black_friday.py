@@ -16,7 +16,7 @@ class BlackFriday:
     A class for XClouds black friday sale.
     :cvar _black_friday_discount: The discount applied if the conditions are
     met. A private variable, for Black Friday use only.
-    :type _black_friday_discount: float
+    :type _black_friday_discount: float | int
 
     Methods:
         apply_discount(): Applies a discount if discount conditions are met
